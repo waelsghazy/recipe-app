@@ -7,15 +7,15 @@ import  styled  from "styled-components"
 function Searched() {
     const [searched, setSearched] = useState([]);
     let params = useParams();
-    useEffect (()=> {
-        getSearched(params.search)
-        // eslint-disable-next-line
-    }, [params.search]);
     const getSearched = async (name) => {
         const {data} = await 
         axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=36e8fccb0cf24b6cbd6ea63f85b8acf1&query=${name}`);
         setSearched(data.results)
     }
+    useEffect (()=> {
+        getSearched(params.search)
+        // eslint-disable-next-line
+    }, [params.search]);
     return (
         <div className="container">
             <Grid>

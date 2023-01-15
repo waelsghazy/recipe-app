@@ -8,9 +8,6 @@ import  styled  from "styled-components";
 
 function Popular() {
     const [popular, setPopular] = useState([])
-    useEffect(() => {
-        getPopular()
-    }, [])
     const getPopular = async () => {
         const check = localStorage.getItem('popular');
         if (check) {
@@ -24,6 +21,9 @@ function Popular() {
         console.log(data.recipes);
         } 
     }
+    useEffect(() => {
+        getPopular()
+    }, []);
     return (
         <div className="container">
                 <Wrapper>

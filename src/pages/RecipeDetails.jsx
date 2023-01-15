@@ -9,10 +9,7 @@ function RecipeDetails() {
     const [arr, setArr] = useState([])
     const params = useParams();
     const [details, setDetails] = useState({});
-        useEffect(() => {
-        getRecipeDetails();
-        // eslint-disable-next-line
-    }, [params.id]);
+        
     const getRecipeDetails = async () => {
     const { data } = await axios.get(
         `https://api.spoonacular.com/recipes/${params.id}/information?apiKey=36e8fccb0cf24b6cbd6ea63f85b8acf1`
@@ -20,6 +17,10 @@ function RecipeDetails() {
         setDetails(data);
         setArr(data.extendedIngredients)
     };
+    useEffect(() => {
+        getRecipeDetails();
+        // eslint-disable-next-line
+    }, [params.id]);
     return (
     <div className="container">
         <Wrapper>
