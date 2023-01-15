@@ -5,8 +5,6 @@ import Cuisine from './pages/Cuisine';
 import Layout from './Layout';
 import Searched from './pages/Searched';
 import RecipeDetails from './pages/RecipeDetails'
-import RecipeContextProvider from './Context/Context';
-
 
 function App() {
   const routers = createBrowserRouter([
@@ -18,9 +16,7 @@ function App() {
     ]}
   ])
   return (
-      <RecipeContextProvider>
       <RouterProvider router={routers} />
-    </RecipeContextProvider>
   )
 }
 

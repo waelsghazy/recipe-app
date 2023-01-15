@@ -17,6 +17,7 @@ function Cuisine() {
     useEffect (()=> {
         getCuisine(params.type)
         console.log(params.type);
+        // eslint-disable-next-line
     }, [params.type]);
     return (
         <div className="container">

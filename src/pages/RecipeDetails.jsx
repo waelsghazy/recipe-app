@@ -3,15 +3,15 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
-import { useStateContext } from "../Context/Context";
 
 function RecipeDetails() {
-    const {activeButton, setActiveButton} = useStateContext()
+    const [activeButton, setActiveButton] = useState("instructions");
     const [arr, setArr] = useState([])
     const params = useParams();
     const [details, setDetails] = useState({});
         useEffect(() => {
         getRecipeDetails();
+        // eslint-disable-next-line
     }, [params.id]);
     const getRecipeDetails = async () => {
     const { data } = await axios.get(
@@ -76,6 +76,8 @@ const Wrapper = styled.div`
         margin: 1.4rem 0;
         line-height: 2rem;
         font-size: 1.2rem;
+        text-align: left;
+        word-break: break-all;
     }
     a {
         text-decoration: none;

@@ -3,7 +3,6 @@ import React from 'react'
 import Popular from '../components/Popular'
 import Veggie from '../components/Veggie'
 
-
 function Home() {
     return (
         <motion.div
@@ -12,8 +11,8 @@ function Home() {
             exit={{opacity: 1}}
             transition={{duration: 0.5}}
         >
-            <Veggie />
             <Popular />
+            <Veggie />
         </motion.div>
     )
 }

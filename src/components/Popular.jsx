@@ -74,6 +74,11 @@ const Card = styled.div`
         min-width: 270px;
         min-height: 270px;
         object-fit: cover;
+        @media(max-width: 575px) {
+            img {
+                width: 100;
+            }
+        }
     }
     p {
         position: absolute;

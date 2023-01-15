@@ -9,6 +9,7 @@ function Searched() {
     let params = useParams();
     useEffect (()=> {
         getSearched(params.search)
+        // eslint-disable-next-line
     }, [params.search]);
     const getSearched = async (name) => {
         const {data} = await 
